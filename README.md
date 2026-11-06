@@ -128,3 +128,48 @@ Goal State: The cost must be 0, which means no two queens attack each other.
 AI Concepts Used Simulated Annealing: A probabilistic optimization algorithm used to find solutions by exploring neighboring states. Local Search: Searches for a solution by moving between neighboring states. Heuristic / Cost Function: Calculates the number of attacking queen pairs. Temperature: Controls the probability of accepting worse neighboring states and gradually decreases during the search. Conclusion
 
 This lab demonstrates the implementation of the Simulated Annealing Algorithm to solve the 8-Queens problem. It helps understand probabilistic search, optimization techniques, and how temperature-based exploration helps overcome local minima.
+
+## Week 6 – Propositional Logic: Truth Table Enumeration
+
+### Aim
+To create a Knowledge Base (KB) using propositional logic and implement the Truth Table Enumeration algorithm to determine whether a given query is entailed by the Knowledge Base.
+
+### Concepts Covered
+- Propositional Logic
+- Knowledge Base (KB)
+- Logical Operators (AND, OR, NOT, IMPLIES)
+- Truth Tables
+- Models and Entailment
+- Truth Table Enumeration Algorithm
+
+### Given Knowledge Base
+
+1. Q → P
+2. P → ¬Q
+3. Q ∨ R
+
+### Queries
+1. Does KB entail R?
+2. Does KB entail R → P?
+3. Does KB entail Q → R?
+
+### Implementation
+Implemented using Python with:
+- `itertools.product()` to generate all possible truth-value combinations.
+- Evaluating functions to evaluate individual logical statements.
+- `evaluate_kb()` to evaluate the complete Knowledge Base.
+- `evaluate_query()` to evaluate the given queries.
+- `entails()` to determine propositional entailment.
+
+### Results
+
+| Query | Result |
+|---|---|
+| KB ⊨ R | True |
+| KB ⊨ R → P | False |
+| KB ⊨ Q → R | True |
+
+The Knowledge Base is TRUE in two models.
+
+### Conclusion
+Successfully implemented the Truth Table Enumeration algorithm using Python and verified whether the given queries are entailed by the Knowledge Base.
