@@ -173,3 +173,73 @@ The Knowledge Base is TRUE in two models.
 
 ### Conclusion
 Successfully implemented the Truth Table Enumeration algorithm using Python and verified whether the given queries are entailed by the Knowledge Base.
+
+# Unification Algorithm in First-Order Logic
+
+## 1. Aim
+To implement the Unification Algorithm in Python to find substitutions that make two First-Order Logic (FOL) expressions identical.
+
+## 2. Introduction
+Unification is a process used in First-Order Logic to determine whether two logical expressions can be made identical by replacing their variables with suitable terms.
+
+It is commonly used in automated theorem proving, inference systems, and logic programming.
+
+## 3. Key Concepts
+
+- **Predicate:** Represents a property or relationship, such as `Eats`.
+- **Variable:** Represents an unknown value that can be substituted, such as `x` or `y`.
+- **Constant:** A fixed value representing a specific object, such as `John` or `Apple`.
+- **Function:** A symbol that forms a term using arguments, such as `f(x)`.
+- **Substitution:** Replacing a variable with another term.
+- **MGU (Most General Unifier):** The least restrictive substitution that makes two expressions identical.
+
+## 4. Algorithm
+1. Take two logical expressions as input.
+2. Check whether both expressions are identical.
+3. If one expression is a variable, substitute it with the other term.
+4. Perform the occurs check to avoid invalid substitutions.
+5. If both expressions are compound expressions, check whether their predicate or function symbols match.
+6. Check whether both expressions have the same number of arguments.
+7. Recursively unify the corresponding arguments.
+8. Return the substitution if successful; otherwise, return failure.
+
+## 5. Implementation
+The algorithm is implemented in Python using:
+- Recursive function calls
+- Dictionary for storing substitutions
+- Tuple representation for predicates and functions
+- Occurs check to prevent invalid substitutions
+
+## 6. Test Cases
+
+| Test Case | Expressions | Expected Result |
+|---|---|---|
+| 1 | `Eats(x, Apple)` and `Eats(Riya, y)` | Success |
+| 2 | `P(x, y)` and `Q(a, b)` | Failure |
+| 3 | `P(John, x)` and `P(Mary, y)` | Failure |
+| 4 | `P(f(x), y)` and `P(f(John), Apple)` | Success |
+| 5 | `P(x, x)` and `P(a, a)` | Success |
+| 6 | `P(x)` and `P(f(x))` | Failure (Occurs Check) |
+
+## 7. Sample Output
+
+```text
+Expression 1: ('Eats', 'x', 'Apple')
+Expression 2: ('Eats', 'Riya', 'y')
+
+Unification Successful
+Substitution: {'x': 'Riya', 'y': 'Apple'}
+
+Unified Expression 1: ('Eats', 'Riya', 'Apple')
+Unified Expression 2: ('Eats', 'Riya', 'Apple')
+```
+
+## 8. Applications
+- Automated theorem proving
+- Logic programming
+- Artificial Intelligence inference systems
+- Knowledge representation
+- Natural Language Processing
+
+## 9. Conclusion
+The Unification Algorithm successfully identifies suitable substitutions that make two First-Order Logic expressions identical. It also detects incompatible expressions using structural checks and the occurs check.
